@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f8597011-5cd3-48b4-9116-686ba553c115" name="Changes" comment="start">
+    <list default="true" id="f8597011-5cd3-48b4-9116-686ba553c115" name="Changes" comment="feat: simple NN">
+      <change afterPath="$PROJECT_DIR$/food.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/neural_network.py" beforeDir="false" afterPath="$PROJECT_DIR$/neural_network.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +72,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1757053079839</updated>
-      <workItem from="1757053080808" duration="1537000" />
+      <workItem from="1757053080808" duration="2177000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -82,7 +82,15 @@
       <option name="project" value="LOCAL" />
       <updated>1757053897879</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="feat: simple NN">
+      <option name="closed" value="true" />
+      <created>1757054686479</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1757054686479</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -90,6 +98,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="start" />
-    <option name="LAST_COMMIT_MESSAGE" value="start" />
+    <MESSAGE value="feat: simple NN" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: simple NN" />
   </component>
 </project>
