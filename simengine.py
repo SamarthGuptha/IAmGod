@@ -5,29 +5,23 @@ import config
 
 
 class Simulation:
-    """Manages the state and rules of the simulation."""
-
     def __init__(self):
-        """Initializes a new, empty simulation."""
         self.critters = []
         self.food = []
         self.generation = 0
 
     def reset(self):
-        """Resets the simulation to its initial state."""
         self.critters = [Critter() for _ in range(config.INITIAL_CRITTERS)]
         self.food = [Food() for _ in range(config.INITIAL_FOOD)]
         self.generation = 0
         print("Simulation reset.")
 
     def add_food(self, count=50):
-        """Manually adds food to the world."""
         for _ in range(count):
             if len(self.food) < config.MAX_FOOD:
                 self.food.append(Food())
 
     def update(self):
-        """Runs a single tick of the simulation logic."""
         if len(self.food) < config.MAX_FOOD and random.random() < 0.5:
             for _ in range(config.FOOD_SPAWN_RATE):
                 self.food.append(Food())
@@ -56,7 +50,6 @@ class Simulation:
         self.critters = [c for c in self.critters if c.energy > 0]
 
     def draw(self, screen):
-        """Draws all elements of the simulation."""
         for f in self.food:
             f.draw(screen)
         for critter in self.critters:

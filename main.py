@@ -6,23 +6,16 @@ import fileio
 
 
 def main():
-    """Main application loop."""
     pygame.init()
     screen = pygame.display.set_mode((config.SCREEN_WIDTH, config.SCREEN_HEIGHT))
-    pygame.display.set_caption("Digital Primordial Soup - Artificial Life")
+    pygame.display.set_caption("IAmGod.")
     clock = pygame.time.Clock()
     font = pygame.font.Font(None, 28)
-
-    # --- CORRECTED INITIALIZATION LOGIC ---
     sim = Simulation()
-
-    # 1. Try to load the previous state from the file.
     loaded_state = fileio.load_state()
 
-    # 2. If loading was successful, populate the simulation with the data.
     if loaded_state and all(d is not None for d in loaded_state):
         sim.critters, sim.food, sim.generation = loaded_state
-    # 3. Otherwise, reset to a brand new simulation.
     else:
         sim.reset()
 

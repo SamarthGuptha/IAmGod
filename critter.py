@@ -6,7 +6,6 @@ from neural_network import NeuralNetwork
 
 
 class Critter:
-    """Represents a single organism in the simulation."""
 
     def __init__(self, dna=None, x=None, y=None, energy=0.5, angle=None):
         if dna:
@@ -17,7 +16,6 @@ class Critter:
         self.x = x if x is not None else random.randint(0, config.SCREEN_WIDTH)
         self.y = y if y is not None else random.randint(0, config.SCREEN_HEIGHT)
         self.energy = energy
-        # Ensure angle is loaded or randomized
         self.angle = angle if angle is not None else random.uniform(0, 2 * math.pi)
         self.speed = 0
 
@@ -27,7 +25,6 @@ class Critter:
         self.brain = NeuralNetwork(nn_weights)
 
     def _decode_dna(self):
-        """Map DNA values to critter traits based on config."""
         self.radius = 4 + (self.dna[0] + 1) * 4
         self.max_speed = 1 + (self.dna[1] + 1) * 2
         self.metabolism = 0.0005 + ((self.dna[2] + 1) / 2) * 0.002
@@ -96,15 +93,9 @@ class Critter:
         return Critter(dna=child_dna, x=child_x, y=child_y, energy=child_energy)
 
     def draw(self, screen):
-        """Draw the critter with integer coordinates."""
-        # --- FIX ---
-        # Ensure all coordinates are integers for Pygame's draw functions.
         pos = (int(self.x), int(self.y))
 
-        # Draw body
         pygame.draw.circle(screen, self.color, pos, int(self.radius))
-
-        # Calculate and draw direction indicator
         end_x = self.x + math.cos(self.angle) * self.radius
         end_y = self.y + math.sin(self.angle) * self.radius
         end_pos = (int(end_x), int(end_y))
@@ -116,9 +107,6 @@ class Critter:
 
     @classmethod
     def from_dict(cls, data):
-        """Create a critter from a dictionary, including its angle."""
-        # --- FIX ---
-        # Pass the angle from the saved data during creation.
         return cls(
             dna=data.get("dna"),
             x=data.get("x"),
